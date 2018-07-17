@@ -1,4 +1,0 @@
-On hostpc
- 1. run update.sh to get newest lib, firmware
-On targetPC:
- 1. modify data.dat to select com port, Control box

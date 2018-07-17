@@ -1,7 +1,0 @@
-<launch>
-  <node name="pr_move_node" pkg="pr_teleop"
-  type="move_service.py" respawn="true" output="screen"  />
-  
-  <node name="pr_safe_stop" pkg="pr_teleop"
-  type="move_safe_stop.py" respawn="true" output="screen"  />
-</launch>

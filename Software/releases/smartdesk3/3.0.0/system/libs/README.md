@@ -1,1 +1,0 @@
-wpa_cli: http://www.qnx.com/developers/docs/6.5.0/index.jsp?topic=%2Fcom.qnx.doc.neutrino_utilities%2Fw%2Fwpa_cli.html

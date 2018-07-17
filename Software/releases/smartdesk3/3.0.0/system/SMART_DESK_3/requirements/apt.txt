@@ -1,3 +1,0 @@
-apt-transport-https
-uuid
-libgeos-dev

@@ -1,5 +1,0 @@
-apt-transport-https
-uuid
-python-alsaaudio
-python-pyaudio
-libspotify-dev

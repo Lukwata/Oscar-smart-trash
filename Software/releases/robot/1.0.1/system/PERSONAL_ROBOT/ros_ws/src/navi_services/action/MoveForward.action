@@ -1,9 +1,0 @@
-#goal definition
-float32 metre
----
-#result definition
-geometry_msgs/Pose pose
----
-#feedback
-float32 percent
-
