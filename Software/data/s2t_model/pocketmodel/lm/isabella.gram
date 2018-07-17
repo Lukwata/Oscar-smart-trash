@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar isabella;
+
+public <isabella> = (isabella | a | e | i | o | u | t | b | k ) *;
+
+

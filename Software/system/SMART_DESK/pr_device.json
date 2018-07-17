@@ -1,0 +1,37 @@
+{
+	"abilities": [{
+		"sensor": "s2t"
+	}, {
+		"sensor": "play_audio"
+	}, {
+		"sensor": "kws"
+	}, {
+		"sensor": "alarm"
+	}, {
+		"sensor": "spotify"
+	}, {
+		"sensor": "uber"
+	}, {
+		"sensor": "firmware_update"
+	}, {
+		"sensor": "install_ability_device"
+	}, {
+		"sensor": "product_control"
+	}],
+	"name": "SMART_DESK",
+	"boot": null,
+	"firebase_url": "https://autonomous-ai.firebaseio.com/",
+	"id": "",
+	"firebase_uid": "",
+	"policy": "simple",
+	"forwarding": {
+		"t2s": "8fed4642-2075-4b4d-a605-3478acd2b4dd",
+		"phone_control": "",
+		"nlu": "8fed4642-2075-4b4d-a605-3478acd2b4dd"
+	},
+	"config": {
+		"abilities_path": "ability",
+		"ability_config_file": "config.json"
+	},
+	"firebase_app_secret_key": "A8RinxXCQjDJrOn9kxR2kuRTyaWpkuzTnPw4xr6t"
+}

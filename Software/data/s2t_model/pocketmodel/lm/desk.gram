@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar desk;
+
+public <controlheight> = ([set] [height] [to] [level] <level>
+                            | [what|what's] [is] [your] [name]
+                            | [do] [factory] [reset]
+                            | [do] [reset] [internet] [connection] );
+
+<level> = one | two | three | four | five | six | seven | eight | nine | zero;

@@ -1,0 +1,15 @@
+simplejson
+enum
+gtts
+pyzmq
+pyowm
+python-dateutil
+pytz
+tzwhere 
+mysql-connector==2.1.4
+netifaces
+mock
+appengine
+pyrebase
+requests==2.11.1 #important pyrebase only works with this version
+tinydb

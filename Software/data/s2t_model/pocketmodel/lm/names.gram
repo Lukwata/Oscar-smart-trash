@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar names;
+
+public <checkFA> = [stop] [<botname>] | [<vowels>] [<FA>] [<vowels>];
+
+<botname> = isabella;
+<FA> = liz | victor | bella | olive | auto | set alarm;
+<vowels> = (a | e | i | o | u) *;
+

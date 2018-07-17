@@ -1,0 +1,30 @@
+rollback = RollbackOffline();
+if (rollback.check_rollback){
+        rollback.run();
+        remove("~/tmp/system");
+  
+}
+
+  else{
+      if (os.path.exists(update_temp)){
+
+    //moving new system ...
+      cmd = 'mv --backup=numbered %s %s' % ("~/tmp/system", "~/aos/"");
+      Util.cmd(cmd);
+      if (not os.path.exists('~/tmp/system')){
+          moving successful!;
+      }
+      else{
+          moving fail!;
+      }
+
+    
+  }
+  
+  
+  else{
+  print "No update"
+}
+
+
+

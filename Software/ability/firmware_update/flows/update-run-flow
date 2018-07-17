@@ -1,0 +1,27 @@
+
+read_data_update_info;
+if(is_valid_firmware) {
+  Please Wait for updating your Autonomous device...;
+  if(download()){
+    if( data['md5'] == zip_md5()){
+      if(unzip()){
+        Please Wait for installing package ...;
+        if(install_all_package()){
+          update successful, please wait for rebooting ...;
+            remove_log;
+            update_config_and_reboot;
+            return True;
+        }
+        else{
+          RollbackOffline.run()
+        }
+
+      }
+
+    }
+
+  }
+}
+Cannot update your firmware now. Please try again.;
+remove(update_temp);
+return False;

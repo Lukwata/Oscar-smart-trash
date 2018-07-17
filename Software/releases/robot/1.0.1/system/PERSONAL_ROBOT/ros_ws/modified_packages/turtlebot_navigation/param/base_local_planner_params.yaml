@@ -1,0 +1,18 @@
+TrajectoryPlannerROS:
+  max_vel_x: 0.1
+  min_vel_x: 0.05
+  max_vel_y: 0.1
+  min_vel_y: 0.05
+  max_vel_theta: 1
+  min_in_place_vel_theta: 0.4
+
+  acc_lim_theta: 0.5
+  acc_lim_x: 0.05
+  acc_lim_y: 0.05
+
+  holonomic_robot: true
+  #my cfg
+  meter_scoring: true
+  inscribed_radius: 0.25
+  planner_frequency: 1     #The rate in Hz at which to run the global planning loop. 
+  path_distance_bias: 0.20 # weighting for how much the controller should stay close to the path it was given

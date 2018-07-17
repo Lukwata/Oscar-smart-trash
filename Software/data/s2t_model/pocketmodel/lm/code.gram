@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar code;
+
+public <secretcode> = ([<num>] [<num>] [<num>] [<num>] [<num>] | [yes] [i] [do]);
+
+<num> = one | two | three | four | five | six | seven | eight | nine | zero;

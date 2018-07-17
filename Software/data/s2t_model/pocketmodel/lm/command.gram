@@ -1,0 +1,22 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar command;
+
+public <basic> = ( [what|what's] [is] [your] [name]
+                            | [one] [two] [three] [four] [five] [six] [seven] [eight] [nine] [ten]
+                            | [hello]
+                            | [step] [top] [stage]
+			                | [stop]
+                            | [how] [are] [you]
+                            | [what] [time] [is] [it]
+                            | [do] [factory] [reset]
+			                | [yes] [i] [do]
+			                | [no] [i] [don't]
+			                | [no] [i] [do] [not]
+                            | [update] [wi-fi]
+                            | [reset] [internet] [connection] );
+

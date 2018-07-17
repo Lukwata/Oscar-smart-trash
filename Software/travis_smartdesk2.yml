@@ -1,0 +1,37 @@
+language: python
+python:
+  - "2.7"
+cache: pip
+sudo: true
+git:
+  submodules: true
+env:
+ - PYTHONPATH=$PYTHONPATH:$HOME/ DEVICE_TYPE=PERSONAL_ROBOT
+before_script:
+- export API_URL=http://104.196.119.0/v2/
+#install libzmq4.2.1
+- mkdir -p $HOME/tmp/debs/
+- wget https://s3.amazonaws.com/robotbase-cloud/deb-store/libzmq_4.2.3-1_armhf.deb
+- mv libzmq_4.2.3-1_armhf.deb $HOME/tmp/debs/
+- sudo dpkg -i --force-architecture $HOME/tmp/debs/libzmq_4.2.3-1_armhf.deb
+- wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+- sudo wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/mopidy.list
+- sudo apt-get update
+- sudo apt-get install -y libspotify-dev portaudio19-dev libasound-dev sox libsox-fmt-mp3 python-scipy libhdf5-openmpi-dev python-h5py pulseaudio
+
+#- pip install -r ./aos/system/requirements/pip.txt
+- mkdir -p $HOME/tmp/pip/wheel && pip install wheel && pip wheel --wheel-dir=$HOME/tmp/pip/wheel -r./system/$DEVICE_TYPE/requirements/pip.txt
+- pip install --no-index --find-links=$HOME/tmp/pip/wheel -r ./system/$DEVICE_TYPE/requirements/pip.txt
+
+#- sudo pip install -r ./system/requirements/pip.txt
+- cp -R ./ $HOME/aos
+- git clone -b develop git@github.com:duyhtq/sdk.git
+- rm $HOME/aos/data/*.json
+#  - python -c 'import zmq; print("Current libzmq version is %s" % zmq.zmq_version()); print("Current  pyzmq version is %s" % zmq.__version__)'
+- pip install freezegun
+script:
+  - python -m unittest discover -s system/libs/tests
+  - python -m unittest discover -s test
+notifications:
+  slack: aos2014:swoCS9yPPcSFmUZBID9kxtCc
+

@@ -1,0 +1,5 @@
+<launch> 
+  <node name="pr_safe_stop" pkg="pr_teleop"
+  type="move_safe_stop.py" respawn="true" output="screen"  />
+
+</launch>

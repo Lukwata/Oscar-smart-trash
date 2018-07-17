@@ -1,0 +1,8 @@
+{
+    "sensors": ["product_control", "check_internet_connection", "start_check_internet_connection"],
+    "version": "1.0.0",
+    "type": 0,
+    "is_service": 1,
+    "boot": true,
+    "application_file": "main.py"
+}

@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar command;
+
+public <basic> = ( [what|what's] [is] [your] [name]
+                            | [do] [factory] [reset]
+                            | [update] [wifi]
+                            | [reset] [internet] [connection] );
+

@@ -1,0 +1,19 @@
+max_obstacle_height: 0.60  # assume something like an arm is mounted on top of the robot
+obstacle_range: 3.9
+raytrace_range: 3.9
+robot_radius: 0.15
+inflation_radius: 0.50
+footprint: [ [0.15, 0.15], [-0.15, 0.15], [-0.15, -0.15], [0.15, -0.15] ]
+observation_sources:   laser_scan_sensor bumper
+
+laser_scan_sensor: {sensor_frame: /camera_depth2_frame, data_type: LaserScan, topic: /scan ,
+observation_persistence: 0.0, marking: true, clearing: true, max_obstacle_height: 1, min_obstacle_height: -0.2}
+
+bumper: {sensor_frame: /base_link, data_type: PointCloud2, topic: /mobile_base/sensors/bumper_pointcloud ,
+observation_persistence: 6000.0, marking: true, clearing: true, max_obstacle_height: 1, min_obstacle_height: -0.2}
+
+# These were for the create, but I think weren't getting used. 
+# Can we merge to a common configuration - DJS?
+# scan: {data_type: LaserScan, topic: /scan, marking: true, clearing: true}
+# left_bump: {data_type: PointCloud2, topic: /bump_sensor_left, marking: true, clearing: true}
+# right_bump: {data_type: PointCloud2, topic: /bump_sensor_right, marking: true, clearing: true}

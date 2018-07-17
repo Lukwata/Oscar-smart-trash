@@ -1,0 +1,37 @@
+//1. install pip
+write_log('pip', 2);
+if (Pip.update()){
+  write_log('pip', 1);
+  Update pip package successful.;
+}
+else{
+  write_log('pip', 0);
+  Update pip package failed.;
+  return False;
+
+}
+
+  //2. install deb
+  write_log('deb', 2);
+  if(Deb.update()){
+      write_log('deb', 1);
+      Update debian package successful.;
+  }
+  else{
+      write_log('deb', 0);
+      Update debian package failed.';
+      return False;
+  }
+
+  //3. install apt:
+  write_log('apt', 2);
+  if(APT.update()){
+      write_log('apt', 1);
+      Update apt package successful;
+  }
+  else{
+      write_log('apt', 0);
+      Update apt package failed.;
+      return False;
+  }
+return True;

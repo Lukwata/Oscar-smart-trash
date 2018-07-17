@@ -1,0 +1,21 @@
+<launch>
+	<env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find navi_services)/config/custom_rosconsole.config"/>
+    <arg name="debug" default="false"/>
+
+    <include file="$(find kobuki_auto_docking)/launch/minimal.launch"/>
+    <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+    <include file="$(find rtabmap_ros)/launch/demo/demo_turtlebot_mapping.launch">
+        <arg name="localization" value="true" />
+        <arg name="database_path" value="/home/ubuntu/data/rtabmap.db" />
+    </include>
+
+    <node pkg="topic_tools" type="relay" name="relay_cmd_vel" args="/cmd_vel /navigation_velocity_smoother/raw_cmd_vel" required="true"/>
+
+    <node pkg="topic_tools" type="throttle" name="relay_compressed_image" args="messages /camera/rgb/image_raw/compressed 5 /compressed_image" required="true">
+      <param name="lazy" value="false"/>
+    </node>
+
+    <node name="navi_service" pkg="navi_services" type="navi_srv.py" output="screen" />
+
+</launch>

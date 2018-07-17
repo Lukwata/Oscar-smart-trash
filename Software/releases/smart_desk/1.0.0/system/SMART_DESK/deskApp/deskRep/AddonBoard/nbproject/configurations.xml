@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/AddonBoardController.hpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/inc/Device/AutonomousCommFrame.h</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/LinearDevice.hpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/inc/COMMUNICATION/Uart.hpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/inc/ZMQ/ZmqReplier.hpp</itemPath>
+      <itemPath>../../../../../../ws/Linux/myLib/Library/inc/ZMQ/iZmq.hpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/AddonBoardController.cpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/Device/AutonomousCommFrame.c</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/Desk.cpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/TIMER/Timer.cpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/COMMUNICATION/Uart.cpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/ZMQ/ZmqReplier.cpp</itemPath>
+      <itemPath>/home/thanh/ws/Linux/myLib/Library/src/ZMQ/iZmq.cpp</itemPath>
+      <itemPath>user/main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../../../ws/Linux/myLib/Library/src/ZMQ</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/src/TIMER</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/src/Smartdesk</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/src/COMMUNICATION</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/src/Device</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/inc/SmartDesk</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/inc/Device</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/inc/COMMUNICATION</Elem>
+    <Elem>../../../../../../ws/Linux/myLib/Library/inc/ZMQ</Elem>
+    <Elem>../..</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="x64" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <architecture>2</architecture>
+          <standard>10</standard>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <architecture>2</architecture>
+          <standard>8</standard>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <architecture>2</architecture>
+        </fortranCompilerTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>user/x64/deskrep</output>
+          <linkerLibItems>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+            <linkerLibStdlibItem>DynamicLinking</linkerLibStdlibItem>
+            <linkerOptionItem>`pkg-config --libs libzmq`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="../../../../../../ws/Linux/myLib/Library/inc/ZMQ/iZmq.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/COMMUNICATION/Uart.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/Device/AutonomousCommFrame.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/AddonBoardController.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/LinearDevice.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/ZMQ/ZmqReplier.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/COMMUNICATION/Uart.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Device/AutonomousCommFrame.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/AddonBoardController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/Desk.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/TIMER/Timer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/ZmqReplier.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/iZmq.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="user/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="x86" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../../../../../../ws/Linux/myLib/Library/inc/ZMQ/iZmq.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/COMMUNICATION/Uart.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/Device/AutonomousCommFrame.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/AddonBoardController.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/LinearDevice.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/ZMQ/ZmqReplier.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/COMMUNICATION/Uart.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Device/AutonomousCommFrame.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/AddonBoardController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/Desk.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/TIMER/Timer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/ZmqReplier.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/iZmq.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="user/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="RPI" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <stripSymbols>true</stripSymbols>
+          <standard>10</standard>
+          <commandlineTool>arm-linux-gnueabihf-gcc</commandlineTool>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+            <pElem>user</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <standard>8</standard>
+          <commandlineTool>arm-linux-gnueabihf-g++</commandlineTool>
+          <incDir>
+            <pElem>/home/thanh/ws/Linux/myLib/Library/inc</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>user/RPI/deskrep</output>
+          <commandlineTool>arm-linux-gnueabihf-g++</commandlineTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+            <linkerLibStdlibItem>DynamicLinking</linkerLibStdlibItem>
+            <linkerOptionItem>`pkg-config --libs libzmq`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="../../../../../../ws/Linux/myLib/Library/inc/ZMQ/iZmq.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/COMMUNICATION/Uart.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/Device/AutonomousCommFrame.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/AddonBoardController.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/SmartDesk/LinearDevice.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/inc/ZMQ/ZmqReplier.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/COMMUNICATION/Uart.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Device/AutonomousCommFrame.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/AddonBoardController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/Smartdesk/Desk.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/TIMER/Timer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/ZmqReplier.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/thanh/ws/Linux/myLib/Library/src/ZMQ/iZmq.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="user/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

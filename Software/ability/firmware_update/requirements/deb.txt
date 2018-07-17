@@ -1,0 +1,2 @@
+libzmq libzmq_4.2.1-1_armhf.deb 4.2.1-1
+wiringpi wiringpi_2.13_armhf.deb 2.14

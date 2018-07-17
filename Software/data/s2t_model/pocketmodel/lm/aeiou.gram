@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar aeiou;
+
+public <aeiou> = <vowel>;
+
+<vowel> = a | e | i | o | u ;

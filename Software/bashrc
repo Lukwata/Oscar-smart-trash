@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH=$PYTHONPATH:$HOME/
+export DEVICE_TYPE=SMART_DESK # PERSONAL_ROBOT/ SMART_WALL
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+if [ "$SSH_CONNECTION" -a "$SSH_TTY" == $(tty) ] ; then
+        echo "This bash session was opened from an ssh login :)"
+else
+        echo "Running boot.sh now ..."
+        bash aos/boot.sh
+fi
+
+export API_BASE_URL=https://autonomousbrain.com/v2/
+export __FIREBASE_CONFIG__=${HOME}/aos/system/configs/firebase_live.json
+
+# Begin PERSONAL_ROBOT
+
+cat /proc/asound/cards | {
+  count=0
+  speaker_name_1="usb pnp sound device"
+  speaker_name_2="media usb headphone"
+  while IFS= read -r line
+  do
+    if [[ $(echo "${line,,}" | grep -E "$speaker_name_1|$speaker_name_2") ]]; then
+      if [ "${line:0:2}" != "" ]
+      then
+        count="${line:0:2}"
+        echo $count > $HOME/hwindex.txt
+        break
+      fi
+    fi
+  done
+}
+
+value="$(cat $HOME/hwindex.txt)"
+export AUDIODEV=plughw:"$value"
+
+source ~/set_params.sh 
+
+# End PERSONAL_ROBOT
+
+
+# Begin SMART_DESK
+
+export AUDIODEV=plughw:0
+
+# End SMART_DESK

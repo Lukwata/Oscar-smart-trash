@@ -1,0 +1,13 @@
+#!/bin/bash
+#can luu truoc vao board: /usr/local/bin/
+if [[ $1 == "" ]]; then
+    echo ""
+else
+    a="$(dpkg-query -W -f='${Version}' $1 2>&1)"
+
+    if [[ $? == 0 ]]; then
+        echo $a
+    else
+        echo ""
+    fi
+fi

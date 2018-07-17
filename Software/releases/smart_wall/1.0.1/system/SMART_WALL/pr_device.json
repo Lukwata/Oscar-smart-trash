@@ -1,0 +1,48 @@
+{
+	"abilities": [{
+		"sensor": "s2t"
+	}, {
+		"sensor": "play_audio"
+	}, {
+		"sensor": "animation"
+	}, {
+		"sensor": "kws"
+	}, {
+		"sensor": "alarm"
+	}, {
+		"sensor": "alarm_service"
+	}, {
+		"sensor": "spotify"
+	}, {
+		"sensor": "uber"
+	}, {
+		"sensor": "firmware_update"
+	}, {
+		"sensor": "install_ability_device"
+	}, {
+		"sensor": "camera"
+	}, {
+		"sensor": "paint"
+	}, {
+		"sensor": "telepresence"
+	}, {
+		"sensor": "product_control"
+	}],
+	"name": "personal robot device",
+	"boot": null,
+	"firebase_url": "https://personalrobot-1470372118376.firebaseio.com/",
+	"id": "45f3f9eb-4e3c-423d-9c52-c42088246919",
+	"firebase_uid": "o7izz3K8ldbCDfsMssduxvw292K2",
+	"policy": "simple",
+	"freq": [],
+	"forwarding": {
+		"t2s": "8fed4642-2075-4b4d-a605-3478acd2b4dd",
+		"phone_control": "",
+		"nlu": "8fed4642-2075-4b4d-a605-3478acd2b4dd"
+	},
+	"config": {
+		"abilities_path": "ability",
+		"ability_config_file": "config.json"
+	},
+	"firebase_app_secret_key": "DK1PezoaQS0usTCfp4tiskPxh5U62J2GxvLuTJdv"
+}

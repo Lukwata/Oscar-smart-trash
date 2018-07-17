@@ -1,0 +1,36 @@
+{
+	"abilities": [{
+		"sensor": "s2t"
+	}, {
+		"sensor": "play_audio"
+	}, {
+		"sensor": "alarm"
+	}, {
+		"sensor": "spotifys"
+	},{
+		"sensor": "firmware_update"
+	}, {
+		"sensor": "install_ability_device"
+	}, {
+		"sensor": "product_control"
+	},
+	{
+		"sensor": "uber"
+	}],
+	"name": "SMART_DESK",
+	"boot": null,
+	"firebase_url": "https://personalrobot-1470372118376.firebaseio.com/",
+	"firebase_uid": "",
+	"policy": "simple",
+	"freq": [],
+	"forwarding": {
+		"t2s": "MxHBeVNrHuWVkpklNDUDRSqH8h52/8fed4642-2075-4b4d-a605-3478acd2b4dd",
+		"phone_control": "",
+		"nlu": "MxHBeVNrHuWVkpklNDUDRSqH8h52/8fed4642-2075-4b4d-a605-3478acd2b4dd"
+	},
+	"config": {
+		"abilities_path": "ability",
+		"ability_config_file": "config.json"
+	},
+	"id": ""
+}

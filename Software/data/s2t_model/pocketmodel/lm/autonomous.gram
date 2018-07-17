@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar
+ */
+
+grammar autonomous;
+
+public <autonomous> = (autonomous | a | e | i | o | u | t | b | k ) *;
+
+

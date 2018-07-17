@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Change log path -->
+  <arg name="log_path" value="~/aos/system/PERSONAL_ROBOT/ros_ws/aau_multi_robot" />
+  <arg name="frontier_selection" default="2"/>
+
+  <node pkg="explorer" type="explorer" respawn="false" name="map_explorer" output="screen">
+    <param name="frontier_selection" value="$(arg frontier_selection)"/>
+    
+    <rosparam file="$(find explorer)/param/turtlebot_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find explorer)/param/turtlebot_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find explorer)/param/turtlebot_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/turtlebot_global_costmap_params.yaml" command="load" />
+
+    <param name="log_path" value="$(arg log_path)" />
+    
+  </node>
+</launch>

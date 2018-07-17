@@ -1,0 +1,18 @@
+local_costmap:
+   global_frame: map
+   robot_base_frame: /base_footprint
+   update_frequency: 5
+   publish_frequency: 5
+   static_map: false
+   footprint: [ [0.15, 0.15], [-0.15, 0.15], [-0.15, -0.15], [0.15, -0.15] ]
+   
+   rolling_window: true
+   width: 4.0
+   height: 4.0
+   resolution: 0.02
+   transform_tolerance: 1
+   track_unknown_space: true
+   unknown_cost_value: 255
+
+
+   
