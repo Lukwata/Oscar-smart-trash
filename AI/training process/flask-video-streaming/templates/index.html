@@ -1,0 +1,170 @@
+<html>
+
+<head>
+  <title>JpegCamera Demo</title>
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+
+  </script>
+  <style>
+    .sexyButton {
+      background: rgb(89, 92, 89);
+      height: 40px;
+      font-size: 24px;
+      margin: 10px;
+    }
+
+    .status {
+      color: red;
+    }
+
+    input[type=radio] {
+      border: 5px solid #0DFF92;
+      margin: 5px;
+    }
+  </style>
+
+  <body style="">
+    <div>
+      <div style="width:1300px;">
+        <!-- <video id="video" width="640" autoplay></video>  -->
+        <!-- <img  id="video" src="http://localhost:8081" /> -->
+        <img id="video" width="640" height="480" src="/video_feed" style="background: red;padding: 5px;">
+        <canvas id="canvas" width="640" height="480" style="float: right;padding: 5px;background: green;"></canvas>
+        <div style="">
+          <form onsubmit="submitdata(); return false;">
+            <h2>Loại rác</h2>
+            <table>
+              <tr>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" checked="" value="Metal">(Kim Loại) Lon nước ngọt, giấy bạc, lon thức ăn, chai xịt, dụng cụ, ... </label>
+                </td>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" value="NonRecyclablePlastic">(Nhựa không tái chế) Bịch nylon, bao bì nylon, cuộn băng keo, giấy gói thực phẩm, ...</label>
+                </td>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" value="RecyclablePlastic">(Nhựa tái chế) Chai nhựa (nước lọc, nước ngọt), cốc, nắp, hộp nhựa, chai gia vị (tương, ớt), cốc mỳ, ...</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" value="Tissue">(Giấy ăn) Cuộn giấy vệ sinh, bịch khăn ăn, mảnh giấy vệ sinh, giấy ăn ...</label>
+                </td>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" value="Tube">(Dạng tuýp) Tuýp kem đánh răng, túyp mỹ phẩm, tuýp keo, ...</label>
+                </td>
+                <td>
+                    <label>
+                        <input class="radio-in" type="radio" name="trashtype" value="Paper">(Giấy) Giấy văn phòng, tạp chí, giấy báo quảng cáo, tập, sách, bì thư, túi, cốc ly giấy, ...</label>
+                </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label>
+                          <input class="radio-in" type="radio" name="trashtype" value="Carton">(Carton) Hộp carton, hộp sữa, hộp thức ăn nhanh, ...</label>
+                  </td>
+                <td>
+                  <label>
+                    <input class="radio-in" type="radio" name="trashtype" value="Background">(BackGround) Không có gì</label>
+                </td>
+                <td>
+                    <label>
+                        <input class="radio-in" type="radio" name="trashtype" value="DoVatKhac">Đồ vật khác</label>
+                </td>
+              </tr>
+              <button onclick="playAudio()" type="button">Nguyên</button>
+            </table>
+            
+          
+          <div>
+            <button id="snap" style="display: inline-block;" 
+             class="sexyButton">Chụp Hình</button>
+            <input class="sexyButton" type="button" id="btnUpload"  type="submit" value="Lưu Hình">
+            <input class="sexyButton" type="button" id="count"
+             value="đã lưu: 0">
+            <h2 class="status" id="status"></h2>
+          </div>
+
+        </form>
+          
+        </div>
+      </div>
+
+
+    </div>
+    <script>
+        var x = document.getElementById("myAudio");
+      var countHinh = 0;
+      var countBam = 0;
+      window.addEventListener("DOMContentLoaded", function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        //var image =document.getElementById("video");
+        var image = new Image;
+        document.getElementById('snap').addEventListener('click', function () {
+
+          $("#btnUpload").removeAttr("disabled");
+          image.onload = function () {
+            context.drawImage(image, 0, 0, 640, 480);  // Or at whatever offset you like
+          };
+          image.src = "/video_feed";
+
+        });
+
+        $("#status").text("");
+
+      }, false);
+      
+      function playAudio() {
+          var audio = new Audio('/static/nguyen.mp3');
+          audio.play();
+	  countBam++;
+	  if (countBam%100==0)
+	  {
+		setTimeout(playAudio2, 500);
+          }
+      }
+    
+      function playAudio2() {
+        var audio = new Audio('/static/bacrao.mp3');
+        audio.play();
+    }
+    
+      function changeText(){
+	$("#status").text("Xong");
+        $("#count").val("đã lưu: " + (++countHinh))
+        //setTimeout(playAudio, 100);
+      };
+
+      function uploadEx() {
+        //$("#btnUpload").attr("disabled", true);
+        $("#status").text("Đang gửi 3...");
+        $.post('http://localhost:2000/api/Upload', {
+          imgUploader: canvas.toDataURL('image/jpeg', 0.8),
+          trashtype: $("input[name=trashtype]:checked").val()
+        }, function (data) {
+          if (data.status == 1) {
+            setTimeout(changeText, 2000);
+
+          } else {
+            $("#status").text("Lỗi. Vui lòng gửi lại.");
+          }
+        });
+      };
+
+      
+      function submitdata(){
+          
+          $("#snap").click();
+          setTimeout(uploadEx, 2000); 
+
+        };
+
+    </script>
+  </body>
+
+</html>

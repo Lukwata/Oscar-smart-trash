@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JpegCamera Demo</title>
+    <script type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script> 
+    <style>
+      .sexyButton{ 
+        background: rgb(89, 92, 89);
+        height: 40px;
+        font-size: 24px;
+        margin: 10px;
+      }
+      .status{
+        color: red;
+      }
+      
+    input[type=radio]{
+      border: 5px solid #0DFF92;
+      margin: 5px;
+    } 
+    </style>
+  </head>
+  <body>   
+      <div> 
+        <div style="width:1000px;">
+          <!-- <video id="video" width="640" autoplay></video>  -->
+          <!-- <img  id="video" src="http://localhost:8081" /> -->
+          <img id="video"  width="640" height="480" src="{{ url_for('video_feed') }}">
+          <div style="width:200px; float:right;"> 
+              <form >
+              
+              <input class="radio-in" type="radio" name="trashtype" checked value="Khongbiet"> Không biết<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Chainhua"> Chai nhựa<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Chaithuytinh"> Chai thuy tinh<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Bao"> Báo<br>
+              <input class="radio-in" type="radio" name="trashtype" value="Giayviet"> Giay viet<br>
+              <input class="radio-in" type="radio" name="trashtype" value="Hopnuoccarton"> Hop nuoc carton<br>
+              <input class="radio-in" type="radio" name="trashtype" value="Lygiay"> Ly giay<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Cacloaihopcartoncardboard"> Cac loai hop carton cardboard<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Lonkimloai"> Lon kim loai<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Hopcartondungtrung"> Hop carton dung trung<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Dogiadung"> Do gia dung<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Dungcutrongnha"> Dung cu trong nha<br> 
+              <input class="radio-in" type="radio" name="trashtype" value="Hopnhua"> Hop nhua<br> 
+              </form>
+          </div>
+        </div>
+        <div>
+            <button id="snap" style="display: inline-block;" 
+            class="sexyButton">Snap Photo</button>
+          <input class="sexyButton" type="button" onclick="uploadEx()" value="Upload" />
+          <h2 class="status" id="status"></h2>
+        </div> 
+        <canvas id="canvas" width="640" height="480"></canvas> 
+      </div> 
+       <script>
+          window.addEventListener("DOMContentLoaded", function() {
+         var canvas = document.getElementById('canvas');
+         var context = canvas.getContext('2d');
+         //var image =document.getElementById("video");
+        var image = new Image;
+          document.getElementById('snap').addEventListener('click', function() {
+              //context.drawImage($("#video"), 0, 0, 640, 480); 
+                // canvas.width  = image.width;
+                // canvas.height = image.height; 
+                // var context = canvas.getContext("2d"); 
+                // context.drawImage(image, 0, 0);  
+                image.onload = function(){
+                  context.drawImage(image, 0, 0, 640, 480);  // Or at whatever offset you like
+                };
+                image.src = "{{ url_for('video_feed') }}";
+                
+          });
+ 
+        }, false);
+
+        function uploadEx() {
+             $("#status").text("Processing.... upload ");
+              $.post('/api/Upload', {
+                imgUploader: canvas.toDataURL(),
+                trashtype:$("input[name=trashtype]:checked").val()
+              }, function(data){
+                if(data.status==1){
+                  $("#status").text("Upload Successfull");
+                }else{
+                  $("#status").text("Failed, Please try again");
+                }
+              });
+          };  
+       </script>
+     
+     </div>
+
+    </body>
+</html>
